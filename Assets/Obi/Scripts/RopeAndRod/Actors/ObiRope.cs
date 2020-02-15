@@ -20,6 +20,8 @@ namespace Obi
         public bool tearingEnabled = false;
         public float tearResistanceMultiplier = 1000;                   /**< Factor that controls how much a structural cloth spring can stretch before breaking.*/
         public int tearRate = 1;
+        private bool isTeared = false;
+        private Material material;
 
         // distance constraints:
         [SerializeField] protected bool _distanceConstraintsEnabled = true;
@@ -30,6 +32,12 @@ namespace Obi
         [SerializeField] protected bool _bendConstraintsEnabled = true;
         [SerializeField] protected float _bendCompliance = 0;
         [SerializeField] [Range(0, 0.5f)] protected float _maxBending = 0;
+
+        private void Start()
+        {
+            material = gameObject.GetComponent<Renderer>().material;
+            material.color = Color.white;
+        }
 
         public bool selfCollisions
         {
@@ -142,13 +150,24 @@ namespace Obi
                 float[] forces = new float[(batch as IObiConstraintsBatch).activeConstraintCount];
                 Oni.GetBatchConstraintForces((batch as IObiConstraintsBatch).oniBatch, forces, forces.Length, 0);
 
+                
+
                 for (int i = 0; i < forces.Length; i++)
                 {
                     int elementIndex = j + 2 * i;
                     elements[elementIndex].constraintForce = forces[i];
 
+                    if (!isTeared)
+                    {
+                        float tearingRate = System.Math.Abs(forces[i] / tearResistanceMultiplier);
+                        tearingRate = 1 - (float)System.Math.Pow((double)tearingRate, 1.5);
+
+                        material.color = new Color(1, tearingRate, tearingRate);
+                    }
+
                     if (-forces[i] > /*resistance * */tearResistanceMultiplier)
                     {
+                        isTeared = true;
                         tornElements.Add(elements[elementIndex]);
                     }
                 }

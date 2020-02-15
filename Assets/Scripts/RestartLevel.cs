@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class RestartLevel : MonoBehaviour
 {
-    string scene ;
+    string scene;
     private void Update()
     {
 
@@ -18,11 +18,10 @@ public class RestartLevel : MonoBehaviour
     }
     public void Restart()
     {
-        
-        
+        Time.timeScale = 1f;
         SceneManager.LoadScene(scene);
-        Time.timeScale = 1.0f;
         
+
     }
     public void NewLevel()
     {

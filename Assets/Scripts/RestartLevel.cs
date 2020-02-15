@@ -18,8 +18,11 @@ public class RestartLevel : MonoBehaviour
     }
     public void Restart()
     {
+        
+        
         SceneManager.LoadScene(scene);
-       
+        Time.timeScale = 1.0f;
+        
     }
     public void NewLevel()
     {

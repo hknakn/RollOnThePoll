@@ -62,7 +62,7 @@ public class ScoringSystem : MonoBehaviour
             Debug.Log(score);
             if (score >= 7)
             {
-                onestarPanel.SetActive(true);
+                treestarPanel.SetActive(true);
                 
 
             }
@@ -74,7 +74,7 @@ public class ScoringSystem : MonoBehaviour
             }
             if (score <= 2 && score >= 0) { 
             
-                treestarPanel.SetActive(true);
+                onestarPanel.SetActive(true);
 
             }
             Time.timeScale = 0f;

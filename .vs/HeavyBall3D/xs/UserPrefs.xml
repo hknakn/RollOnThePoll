@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{723E6823-72F4-FA88-E5DE-B2518E1FF988}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CameraFollow.cs">
+    <Files>
+      <File FileName="Assets/Scripts/CameraFollow.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/YoyoController.cs" Line="10" Column="1" />
+      <File FileName="Assets/Scripts/ScoringSystem.cs" />
+      <File FileName="Assets/Scripts/CameraControl.cs" Line="14" Column="2" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="HeavyBall3D" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Obi" expanded="True">
+                <Node name="Scripts" expanded="True">
+                  <Node name="RopeAndRod" expanded="True">
+                    <Node name="Blueprints" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Scripts" expanded="True">
+                <Node name="CameraFollow.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b3271b58-89a8-4217-ab70-50f7b113b38c" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
